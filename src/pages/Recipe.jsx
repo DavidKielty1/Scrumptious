@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 
 function Recipe() {
   const [details, setDetails] = useState({});
-  const [recipeList, setRecipeList] = useState({});
   const [activeTab, setActiveTab] = useState("instructions");
   let params = useParams();
 
@@ -18,18 +17,6 @@ function Recipe() {
 
   useEffect(() => {
     fetchDetails();
-  }, [params.name]);
-
-  const fetchRecipe = async () => {
-    const data = await fetch(
-      `https://api.spoonacular.com/recipes/informationBulk?ids=${params.name}?apiKey=${process.env.REACT_APP_API_KEY}`
-    );
-    const recipes = data.json();
-    setRecipeList(recipes);
-  };
-
-  useEffect(() => {
-    fetchRecipe();
   }, [params.name]);
 
   return (
