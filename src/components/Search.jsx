@@ -59,10 +59,14 @@ const FormStyle = styled.form`
 
     @media (max-width: 768px) {
       padding: 0.4rem 0rem;
+      font-size: 1.2rem;
+      text-align: center;
     }
 
     @media (min-width: 768px) and (max-width: 1024px) {
       padding: 0.8rem 0rem;
+
+      font-size: 1.4rem;
     }
   }
 
