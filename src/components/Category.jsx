@@ -1,7 +1,7 @@
 import { FaPizzaSlice, FaHamburger } from "react-icons/fa";
 import { GiNoodles, GiChopsticks } from "react-icons/gi";
-import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+import styled from "styled-components";
 
 function Category() {
   return (
@@ -30,6 +30,14 @@ const List = styled.div`
   display: flex;
   justify-content: center;
   margin: 2rem 0rem;
+
+  @media (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 1rem 0rem;
+  }
 `;
 
 const SLink = styled(NavLink)`
@@ -46,14 +54,35 @@ const SLink = styled(NavLink)`
   cursor: pointer;
   transform: scale(0.8);
 
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 0;
+    border-radius: 50%;
+    text-decoration: none;
+    background: linear-gradient(35deg, #494949, #313131);
+    width: 4rem;
+    height: 4rem;
+    cursor: pointer;
+    transform: scale(0.8);
+  }
+
   h4 {
     color: white;
     font-size: 0.8rem;
+    @media (max-width: 768px) {
+      font-size: 0.7rem;
+    }
   }
 
   svg {
     color: white;
     font-size: 1.5rem;
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
   &.active {

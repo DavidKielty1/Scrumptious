@@ -33,11 +33,25 @@ function Popular() {
         <h3>Popular Picks</h3>
         <Splide
           options={{
-            perPage: 4,
             arrows: false,
             pagination: false,
             drag: "free",
             gap: "5rem",
+            perPage: 4,
+            breakpoints: {
+              640: {
+                perPage: 1,
+              },
+              767: {
+                perPage: 2,
+              },
+              1324: {
+                perPage: 3,
+              },
+              1524: {
+                perPage: 4,
+              },
+            },
           }}
         >
           {popular.map((recipe) => {
@@ -61,6 +75,22 @@ function Popular() {
 
 const Wrapper = styled.div`
   margin: 4rem 0rem;
+  @media (max-width: 768px) {
+    margin: 1rem 1rem;
+  }
+
+  h3 {
+  }
+  @media (max-width: 768px) {
+    h3 {
+      justify-content: center;
+      align-items: center;
+      align-text: center;
+      font-size: 1.2rem;
+      margin: 1rem 0rem;
+      padding: 0rem 2rem;
+    }
+  }
 `;
 
 const Card = styled.div`
@@ -68,6 +98,10 @@ const Card = styled.div`
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
+
+  @media (max-width: 768px) {
+    min-height: 15rem;
+  }
 
   img {
     border-radius: 2rem;
@@ -93,6 +127,9 @@ const Card = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    @media (max-width: 768px) {
+      font-size: 0.9rem;
+    }
   }
 `;
 

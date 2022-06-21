@@ -50,6 +50,13 @@ const Card = styled.div`
   img {
     width: 100%;
     border-radius: 2rem;
+    @media (max-width: 768px) {
+      width: 90%;
+      margin: 0rem 1rem;
+      padding: 0;
+      justify-content: center;
+      align-items: center;
+    }
   }
 
   a {
